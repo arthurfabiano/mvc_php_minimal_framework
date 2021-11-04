@@ -22,20 +22,34 @@ class HomeController extends HomeModel{
 
     public function create()
     {
-        $dados = [
-            'name'   => filter_input(INPUT_POST, 'name', FILTER_DEFAULT),
-            'email'  => filter_input(INPUT_POST, 'email', FILTER_DEFAULT),
-            'pass'   => filter_input(INPUT_POST, 'password', FILTER_DEFAULT)
-        ];
+        // $dados = [
+        //     'name'   => filter_input(INPUT_POST, 'name', FILTER_DEFAULT),
+        //     'email'  => filter_input(INPUT_POST, 'email', FILTER_DEFAULT),
+        //     'pass'   => filter_input(INPUT_POST, 'password', FILTER_DEFAULT)
+        // ];
 
         $dados = [
             'perfil_id' => 1,
             'name'      => 'Teste',
             'email'     => 'teste@gmail.com',
-            'pass'      => 'teste'
+            'password'      => 'teste'
         ];
 
         $users  = $this->store($dados);
+        return $this->blade->render('home', compact(['nome', 'users']));
+    }
+
+    public function edit()
+    {
+        $dados = [
+            'id'        => 4,
+            'perfil_id' => 1,
+            'name'      => 'Teste Update',
+            'email'     => 'teste@gmail.com',
+        ];
+
+        $this->update($dados);
+        $users  = $this->findAll();
         return $this->blade->render('home', compact(['nome', 'users']));
     }
 }

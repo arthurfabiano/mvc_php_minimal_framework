@@ -36,4 +36,15 @@ class HomeModel extends ConectionModel
         return $data;
     }
 
+    public function update($dados)
+    {
+        $query = $this->conectDB()->prepare("UPDATE {$this->table} SET name=?, email=?, perfil_id=? WHERE id=?");
+        $query->bindParam(1, $dados['name'], \PDO::PARAM_STR);
+        $query->bindParam(2, $dados['email'], \PDO::PARAM_STR);
+        $query->bindParam(3, $dados['perfil_id'], \PDO::PARAM_INT);
+        $query->bindParam(4, $dados['id'], \PDO::PARAM_INT);
+        $data = $query->execute();
+        return $data;
+    }
+
 }

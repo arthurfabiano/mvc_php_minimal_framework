@@ -48,6 +48,19 @@ abstract class ConectionModel
     //     return $data;
     // }
 
+    protected function getUpdate($dados) 
+    {
+        // $query = $this->conectDB()->prepare("INSERT INTO {$this->table} VALUES(?,?,?,?,?)");
+        // $query->bindParam(1, $dados['id'], \PDO::PARAM_INT);
+        // $query->bindParam(2, $dados['perfil_id'], \PDO::PARAM_INT);
+        // $query->bindParam(3, $dados['name'], \PDO::PARAM_STR);
+        // $query->bindParam(4, $dados['email'], \PDO::PARAM_STR);
+        // $query->bindParam(5, $dados['password'], \PDO::PARAM_STR);
+        // $query->execute();
+        // $data = $query->fetchAll(\PDO::FETCH_OBJ);
+        // return $data;
+    }
+
     protected function removeCharInQuery() {
         $fillable = (empty($this->fillable)) ? '*' : $this->fillable;
         $result = (!empty($this->hidden)) ? $this->removeItemInQuery($fillable) : $fillable ;
