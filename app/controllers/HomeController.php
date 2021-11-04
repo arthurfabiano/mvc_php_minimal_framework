@@ -55,6 +55,11 @@ class HomeController extends HomeModel{
 
     public function testePullRequest()
     {
-        echo "asdfasdf";exit;
+        echo "update 1";exit;
+    }
+
+    public function testePullRequest2()
+    {
+        echo "update 2";exit;
     }
 }
