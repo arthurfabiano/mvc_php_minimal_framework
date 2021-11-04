@@ -52,14 +52,4 @@ class HomeController extends HomeModel{
         $users  = $this->findAll();
         return $this->blade->render('home', compact(['nome', 'users']));
     }
-
-    public function testePullRequest()
-    {
-        echo "update 1";exit;
-    }
-
-    public function testePullRequest2()
-    {
-        echo "update 2";exit;
-    }
 }
