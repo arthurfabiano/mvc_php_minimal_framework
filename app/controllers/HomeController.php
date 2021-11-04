@@ -52,4 +52,9 @@ class HomeController extends HomeModel{
         $users  = $this->findAll();
         return $this->blade->render('home', compact(['nome', 'users']));
     }
+
+    public function testePullRequest()
+    {
+        echo "asdfasdf";exit;
+    }
 }
